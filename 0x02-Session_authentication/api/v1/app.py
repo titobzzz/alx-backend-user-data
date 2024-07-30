@@ -47,14 +47,14 @@ def unauthorized(error) -> str:
 
 @app.errorhandler(403)
 def forbidden(error) -> str:
-    """Forbidden handler mmmm.
+    """Forbidden handler.
     """
     return jsonify({"error": "Forbidden"}), 403
 
 
 @app.before_request
 def authenticate_user():
-    """authenticatesa user before processing a request.
+    """Authenticates a user before processing a request.
     """
     if auth:
         excluded_paths = [
